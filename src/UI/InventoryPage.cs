@@ -30,4 +30,6 @@ public class InventoryPage(IPage page)
 
         return 0;
     }
+    
+    public async Task OpensCart() => await CartBadge.ClickAsync();
 }

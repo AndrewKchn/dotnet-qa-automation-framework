@@ -20,15 +20,16 @@ public class InventoryPageSteps
         await _context.Pages.InventoryPage.AddBackpackToCart();
     }
     
-    [Then("cart should contain (.*) item")]
-    public async Task AssertCart(int count)
-    {
-        Assert.That(await _context.Pages.InventoryPage.GetCartItemsCount(), Is.EqualTo(count));
-    }
-
     [When("user opens cart")]
     public async Task WhenUserOpensCart()
     {
         await _context.Pages.InventoryPage.OpensCart();
+    }
+    
+    // =========== Assertions =========== 
+    [Then("cart should contain (.*) item")]
+    public async Task AssertCart(int count)
+    {
+        Assert.That(await _context.Pages.InventoryPage.GetCartItemsCount(), Is.EqualTo(count));
     }
 }
