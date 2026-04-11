@@ -1,6 +1,6 @@
 using DotNetQaFramework.Tests.BDD.Hooks;
 using DotNetQaFramework.Tests.BDD.Support;
-using TechTalk.SpecFlow;
+using Reqnroll;
 
 namespace DotNetQaFramework.Tests.BDD.Steps;
 

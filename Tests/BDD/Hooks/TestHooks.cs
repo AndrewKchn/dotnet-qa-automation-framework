@@ -1,7 +1,7 @@
 using DotNetQaFramework.Tests.BDD.Support;
 using DotNetQaFramework.UI;
 using Microsoft.Playwright;
-using TechTalk.SpecFlow;
+using Reqnroll;
 
 namespace DotNetQaFramework.Tests.BDD.Hooks;
 

@@ -1,15 +1,15 @@
 using DotNetQaFramework.Tests.BDD.Hooks;
 using DotNetQaFramework.Tests.BDD.Support;
-using TechTalk.SpecFlow;
+using Reqnroll;
 
 namespace DotNetQaFramework.Tests.BDD.Steps;
 
 [Binding]
-public class CartSteps
+public class InventoryPageSteps
 {
     private readonly Context _context;
 
-    public CartSteps()
+    public InventoryPageSteps()
     {
         _context = TestHooks.Context;
     }
@@ -24,5 +24,11 @@ public class CartSteps
     public async Task AssertCart(int count)
     {
         Assert.That(await _context.Pages.InventoryPage.GetCartItemsCount(), Is.EqualTo(count));
+    }
+
+    [When("user opens cart")]
+    public async Task WhenUserOpensCart()
+    {
+        await _context.Pages.InventoryPage.OpensCart();
     }
 }
