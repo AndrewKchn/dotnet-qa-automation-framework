@@ -10,6 +10,6 @@ public class LoginTests : BaseUiTest
         await Pages.LoginPage.Open();
         await Pages.LoginPage.Login("standard_user", "secret_sauce");
         
-        Assert.That(await Pages.InventoryPage.ShoppingContainerIsVisible(), Is.True);
+        Assert.That(await Pages.InventoryPage.InventoryListIsVisible(), Is.True);
     }
 }
