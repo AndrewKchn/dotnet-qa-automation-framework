@@ -1,3 +1,3 @@
 ## 🚀 CI Status
 
-![UI Tests](https://github.com/your-username/your-repo/actions/workflows/ui-tests.yml/badge.svg)
+![UI Tests](https://andrewkchn.github.io/dotnet-qa-automation-framework/ui-tests.yml/badge.svg)
