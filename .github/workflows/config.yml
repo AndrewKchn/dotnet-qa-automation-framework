@@ -19,6 +19,13 @@ jobs:
         
         run: docker compose up --abort-on-container-exit
 
+      - name: Load history
+        run: |
+          if [ -d ".github/gh-pages/history" ]; then
+            mkdir -p allure-results/history
+            cp -r .github/gh-pages/history/* allure-results/history/
+          fi
+      
       - name: Install Allure
         run: |
           sudo apt-get update
