@@ -5,6 +5,7 @@ public class LoginTests : BaseUiTest
     
     
     [Test]
+    [Explicit("Moved to Reqnroll")]
     public async Task User_Can_Login_With_Valid_Credentials()
     {
         await Pages.LoginPage.Open();

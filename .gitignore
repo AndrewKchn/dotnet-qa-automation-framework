@@ -7,3 +7,4 @@ reports/
 allure-report/
 allure-results/
 Reqnroll/
+Tests/BDD/Features/*.cs

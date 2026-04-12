@@ -20,4 +20,23 @@ public class LoginPageSteps
         await _context.Pages.LoginPage.Open();
         await _context.Pages.LoginPage.Login("standard_user", "secret_sauce");
     }
+
+    [Given("user opens login page")]
+    public async Task UserOpensLoginPage()
+    {
+        await _context.Pages.LoginPage.Open();
+    }
+
+    [When("user logs in with credentials")]
+    public async Task UserLogsInWithCredentials(Reqnroll.Table table)
+    {
+        {
+            var data = table.Rows[0];
+
+            var userName = data["Username"];
+            var password = data["Password"];
+
+            await _context.Pages.LoginPage.Login(userName, password);
+        }
+    }
 }

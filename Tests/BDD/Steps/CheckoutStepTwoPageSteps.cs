@@ -15,7 +15,7 @@ public class CheckoutStepTwoPageSteps
     }
 
     [When("user finishes purchase")]
-    public async Task WhenUserFinishesPurchase()
+    public async Task UserFinishesPurchase()
     {
         await _context.Pages.CheckoutStepTwoPage.FinishCheckout();
     }

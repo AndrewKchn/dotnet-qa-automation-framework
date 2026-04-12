@@ -16,7 +16,7 @@ public class CheckoutCompletePageSteps
 
     // =========== Assertions =========== 
     [Then("order confirmation is shown")]
-    public async Task ThenOrderConfirmationIsShown()
+    public async Task OrderConfirmationIsShown()
     {
         Assert.That(await _context.Pages.CheckoutCompletePage.CompleteHeaderIsVisible(), Is.True);
     }

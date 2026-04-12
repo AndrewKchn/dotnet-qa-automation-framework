@@ -15,7 +15,7 @@ public class CardPageSteps
     }
  
     [When("user proceeds to checkout")]
-    public async Task WhenUserProceedsToCheckout()
+    public async Task UserProceedsToCheckout()
     {
         await _context.Pages.CartPage.Checkout();
     }

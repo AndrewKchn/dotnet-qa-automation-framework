@@ -10,6 +10,7 @@ public class InventoryTests : BaseUiTest
     }
 
     [Test]
+    [Explicit("Moved to Reqnroll")]
     public async Task User_Can_Add_Item_To_Cart()
     {
         await Pages.InventoryPage.AddBackpackToCart();
@@ -18,6 +19,7 @@ public class InventoryTests : BaseUiTest
     }
 
     [Test]
+    [Explicit("Moved to Reqnroll")]
     public async Task User_Can_Add_Multiple_Items_To_Cart()
     {
         await Pages.InventoryPage.AddBackpackToCart();
@@ -27,6 +29,7 @@ public class InventoryTests : BaseUiTest
     }
 
     [Test]
+    [Explicit("Moved to Reqnroll")]
     public async Task User_Can_Remove_Item_From_Cart()
     {
         await Pages.InventoryPage.AddBackpackToCart();
