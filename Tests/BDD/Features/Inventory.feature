@@ -17,6 +17,7 @@ Scenario: User can add multiple items to cart
     And user adds bike light to cart
     Then cart item count is 2
 
+# NOTE: This scenario intentionally includes a failing step to validate Allure reporting (screenshots on failure)
 @ui @inventory @regression
 Scenario: User can remove item from cart
     When user adds backpack to cart
