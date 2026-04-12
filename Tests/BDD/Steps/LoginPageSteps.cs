@@ -15,7 +15,7 @@ public class LoginPageSteps
     }
 
     [Given("user is logged in")]
-    public async Task Login() 
+    public async Task Login()  
     {
         await _context.Pages.LoginPage.Open();
         await _context.Pages.LoginPage.Login("standard_user", "secret_sauce");
