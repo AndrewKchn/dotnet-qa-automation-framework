@@ -4,3 +4,6 @@ obj/
 *.DotSettings.user
 reports/
 *Purchase.feature.cs
+.github/
+allure-report/
+allure-results/

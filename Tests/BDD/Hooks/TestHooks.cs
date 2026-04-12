@@ -21,7 +21,7 @@ public class TestHooks
         _playwright = await Playwright.CreateAsync();
         _browser = await _playwright.Chromium.LaunchAsync(new()
         {
-            Headless = false
+            Headless = true
         });
 
         Context.Page = await _browser.NewPageAsync();

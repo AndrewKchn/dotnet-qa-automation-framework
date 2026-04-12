@@ -17,7 +17,7 @@ public class BaseUiTest
         _playwright = await Playwright.CreateAsync();
         _browser = await _playwright.Chromium.LaunchAsync(new BrowserTypeLaunchOptions
         {
-            Headless = false
+            Headless = true
         });
         _page = await _browser.NewPageAsync();
         Pages = new Pages(_page);
