@@ -8,19 +8,25 @@ jobs:
     
     steps:
       - uses: actions/checkout@v4
+        
+      - name: Checkout (copy) gh-pages repository to GitHub runner
+        uses: actions/checkout@v4
+        with:
+          ref: gh-pages
+          path: ./.github/gh-pages
 
       - name: Run UI-Tests via docker-compose
         
         run: docker compose up --abort-on-container-exit
 
-      - name: Load previous Allure history
-        run: |
-          git clone --depth=1 --branch gh-pages https://github.com/${{ github.repository }} gh-pages || true
-          
-          if [ -d "gh-pages/history" ]; then
-            mkdir -p allure-results/history
-            cp -r gh-pages/history/* allure-results/history/
-          fi
+#      - name: Load previous Allure history
+#        run: |
+#          git clone --depth=1 --branch gh-pages https://github.com/${{ github.repository }} gh-pages || true
+#          
+#          if [ -d "gh-pages/history" ]; then
+#            mkdir -p allure-results/history
+#            cp -r gh-pages/history/* allure-results/history/
+#          fi
 
       - name: Install Allure
         run: |
