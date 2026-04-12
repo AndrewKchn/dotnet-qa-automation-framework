@@ -22,4 +22,4 @@ Scenario: User can remove item from cart
     When user adds backpack to cart
     And user adds bike light to cart
     And user removes backpack from cart
-    Then cart item count is 1
+    Then cart item count is 2

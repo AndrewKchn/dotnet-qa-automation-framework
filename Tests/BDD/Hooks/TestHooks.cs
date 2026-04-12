@@ -1,3 +1,4 @@
+using Allure.Net.Commons;
 using DotNetQaFramework.Tests.BDD.Support;
 using DotNetQaFramework.UI;
 using Microsoft.Playwright;
@@ -38,22 +39,20 @@ public class TestHooks
         await _browser.CloseAsync();
         _playwright.Dispose();
     }
-    
+
     private async Task TakeScreenshot(ScenarioContext scenario)
     {
-        var root = Path.GetFullPath(Path.Combine(AppContext.BaseDirectory, "../../.."));
-        var dir = Path.Combine(root, "reports/screenshots");
-        Directory.CreateDirectory(dir);
-
-        var fileName = $"{scenario.ScenarioInfo.Title}_{DateTime.Now:yyyyMMdd_HHmmss}.png";
-        var path = Path.Combine(dir, fileName);
-
-        await Context.Page.ScreenshotAsync(new PageScreenshotOptions
+        var screenshot = await Context.Page.ScreenshotAsync(new PageScreenshotOptions
         {
-            Path = path,
             FullPage = true
         });
 
-        Console.WriteLine($"Screenshot saved: {path}");
+        var fileName = $"{scenario.ScenarioInfo.Title}_{DateTime.Now:yyyyMMdd_HHmmss}.png";
+        
+        AllureApi.AddAttachment(
+            fileName,
+            "image/png",
+            screenshot
+        );
     }
 }
