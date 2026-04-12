@@ -15,16 +15,15 @@ jobs:
           ref: gh-pages
           path: ./.github/gh-pages
 
-      - name: Run UI-Tests via docker-compose
-        
-        run: docker compose up --abort-on-container-exit
-
       - name: Load history
         run: |
           if [ -d ".github/gh-pages/history" ]; then
             sudo mkdir -p allure-results/history
             sudo cp -r .github/gh-pages/history/* allure-results/history/
           fi
+          
+      - name: Run UI-Tests via docker-compose
+        run: docker compose up --abort-on-container-exit      
       
       - name: Install Allure
         run: |
@@ -43,4 +42,4 @@ jobs:
           token: ${{ secrets.CI_TOKEN }}
           branch: gh-pages
           folder: allure-report
-          clean: true
+          clean: true          
