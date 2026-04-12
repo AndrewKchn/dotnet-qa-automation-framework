@@ -1,6 +1,8 @@
 name: UI_Tests
 
-on: workflow_dispatch
+on:
+  push:
+  workflow_dispatch:
 
 jobs:
   ui-tests:
@@ -8,7 +10,7 @@ jobs:
     
     steps:
       - uses: actions/checkout@v4
-        
+
       - name: Checkout (copy) gh-pages repository to GitHub runner
         uses: actions/checkout@v4
         with:
@@ -21,10 +23,10 @@ jobs:
             sudo mkdir -p allure-results/history
             sudo cp -r .github/gh-pages/history/* allure-results/history/
           fi
-          
+
       - name: Run UI-Tests via docker-compose
-        run: docker compose up --abort-on-container-exit      
-      
+        run: docker compose up --abort-on-container-exit
+
       - name: Install Allure
         run: |
           sudo apt-get update
