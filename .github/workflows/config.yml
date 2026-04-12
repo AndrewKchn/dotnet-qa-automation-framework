@@ -22,8 +22,8 @@ jobs:
       - name: Load history
         run: |
           if [ -d ".github/gh-pages/history" ]; then
-            mkdir -p allure-results/history
-            cp -r .github/gh-pages/history/* allure-results/history/
+            sudo mkdir -p allure-results/history
+            sudo cp -r .github/gh-pages/history/* allure-results/history/
           fi
       
       - name: Install Allure
