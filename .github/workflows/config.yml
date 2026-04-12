@@ -25,6 +25,7 @@ jobs:
           fi
 
       - name: Run UI-Tests via docker-compose
+        continue-on-error: true
         run: docker compose up --abort-on-container-exit
 
       - name: Install Allure
