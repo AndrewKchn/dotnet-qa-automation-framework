@@ -26,11 +26,11 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Content Include=".github\workflows\allure.yml" />
+    <Folder Include="allure-results\" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="allure-results\" />
+    <Content Include=".github\workflows\config.yml" />
   </ItemGroup>
 
 </Project>
