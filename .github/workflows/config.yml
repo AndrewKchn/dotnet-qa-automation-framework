@@ -3,6 +3,8 @@ name: UI_Tests
 on:
   push:
   workflow_dispatch:
+  schedule:
+    - cron: 0 1 * * SUN
 
 jobs:
   ui-tests:
